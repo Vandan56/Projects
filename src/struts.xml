@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="default" extends="struts-default">
+		<action name="login" class="com.project.test.Login">
+			<result name="success">login.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="register" class="com.project.test.Register">
+			<result name="success">register.jsp</result>
+			<result name="error">error.jsp</result>
+		</action>
+
+		<action name="welcome" class="com.project.test.Welcome">
+			<result name="success">welcome.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="index" class="com.project.test.Index">
+			<result name="success">index.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="forgot" class="com.project.test.Forgot">
+			<result name="success">forgot.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="go" class="com.project.test.Logedin">
+			<result name="success">logedin.jsp</result>
+			<result name="failure">fail.jsp</result>
+		</action>
+
+		<action name="Forgotpass" class="com.project.test.Forgotpass">
+			<result name="success">otp.jsp</result>
+			<result name="failure">forgot.jsp</result>
+		</action>
+
+		<action name="Verify" class="com.project.test.OtpAction">
+			<result name="success">resetpass.jsp</result>
+			<result name="failure">otp.jsp</result>
+		</action>
+
+		<action name="reset" class="com.project.test.UpdatePass">
+			<result name="success">passchangesuccess.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="profile" class="com.project.test.Viewprofile">
+			<result name="success">profile.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="search" class="com.project.test.Search"
+			method="search">
+			<result name="success">search.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		<action name="publicpro" class="com.project.test.Search"
+			method="fullprofile">
+			<result name="success">publicpro.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+
+		
+		<action name="updatedata" class="com.project.test.Viewprofile">  
+			<result name="success" >/updatepro.jsp</result>  
+			<result name="error" >/profile.jsp</result>  
+		</action>
+		
+		<action name="update" class="com.project.test.Updateprofile">  
+			<result name="success" type="chain">newprofile</result> 
+		</action>	
+	
+		<action name="newprofile" class="com.project.test.Viewprofile">
+			<result name="success">profile.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+		
+		<action name="admin" class="com.project.test.Adminlogin">
+			<result name="success"  type="chain">adminlogin</result>
+		</action>
+		
+		<action name="adminlogin" class="com.project.test.Admin">
+			<result name="success">adminlogin.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+		
+		<action name="deleterecord" class="com.project.test.Deleteuser">
+			<result name="success"  type="chain">adminlogin</result>
+		</action>
+
+
+	</package>
+</struts>	
